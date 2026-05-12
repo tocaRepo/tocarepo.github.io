@@ -1,91 +1,1514 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aeolian codelab | Mobile Games and App Pages</title>
-  <meta name="description" content="Aeolian codelab app hub with links to all published app landing pages, privacy policies, and related game sites." />
-  <meta name="keywords" content="Aeolian codelab, mobile games, app pages, indie games, Android games, game landing pages" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tocarepo.github.io/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aeolian codelab | Mobile Games and App Pages" />
-  <meta property="og:description" content="Explore all Aeolian codelab app and game pages in one place." />
-  <meta property="og:url" content="https://tocarepo.github.io/" />
-  <meta property="og:site_name" content="Aeolian codelab" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Aeolian codelab | Mobile Games and App Pages" />
-  <meta name="twitter:description" content="Explore all Aeolian codelab app and game pages in one place." />
-  <style>
-    /* Minimal, high-contrast style */
-    html,body { height:100%; margin:0; }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Aeolian codelab | Indie Mobile Games</title>
+<meta content="Explore Aeolian codelab's complete catalogue of indie mobile games: idle clickers, roguelikes, tower defense twists, puzzle games, trivia apps, and experimental worlds." name="description"/>
+<meta content="Aeolian codelab, indie games, mobile games, Android games, idle clicker, roguelike, puzzle games, tower defense, game studio" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://tocarepo.github.io/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Aeolian codelab | Indie Mobile Games" property="og:title"/>
+<meta content="A polished hub for every Aeolian codelab game and app landing page." property="og:description"/>
+<meta content="https://tocarepo.github.io/" property="og:url"/>
+<meta content="Aeolian codelab" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Aeolian codelab | Indie Mobile Games" name="twitter:title"/>
+<meta content="Idle clickers, roguelikes, puzzle games, trivia apps, tower defense twists, and more from Aeolian codelab." name="twitter:description"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1020'/%3E%3Cpath d='M15 42 30 12h4l15 30h-8l-3-7H26l-3 7h-8Zm14-14h6l-3-8-3 8Z' fill='%238b5cf6'/%3E%3Ccircle cx='48' cy='17' r='5' fill='%2322d3ee'/%3E%3C/svg%3E" rel="icon"/>
+<style>
+    :root {
+      color-scheme: dark;
+      --bg: #060812;
+      --bg-soft: #0c1020;
+      --card: rgba(255, 255, 255, 0.075);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --text: #f7fbff;
+      --muted: #a9b4c9;
+      --muted-strong: #d6def1;
+      --line: rgba(255, 255, 255, 0.14);
+      --primary: #8b5cf6;
+      --secondary: #22d3ee;
+      --accent: #f59e0b;
+      --success: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      min-width: 320px;
+    }
+
     body {
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#000;
-      color:#fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(139, 92, 246, 0.32), transparent 32rem),
+        radial-gradient(circle at 92% 10%, rgba(34, 211, 238, 0.22), transparent 30rem),
+        radial-gradient(circle at 45% 78%, rgba(245, 158, 11, 0.14), transparent 26rem),
+        linear-gradient(180deg, #060812 0%, #090b14 52%, #05060a 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
     }
-    .wrap {
-      text-align:center;
-      padding:24px;
-      max-width:720px;
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+      opacity: 0.45;
     }
-    h1 {
-      margin:0 0 18px 0;
-      font-size:28px;
-      letter-spacing:0.02em;
-      font-weight:600;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .links {
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:12px;
+
+    img {
+      display: block;
+      max-width: 100%;
     }
-    a.btn {
-      display:inline-block;
-      padding:10px 16px;
-      border-radius:8px;
-      text-decoration:none;
-      background:rgba(255,255,255,0.06);
-      color:#fff;
-      font-weight:500;
-      border:1px solid rgba(255,255,255,0.06);
-      transition: all .14s ease;
+
+    button,
+    input {
+      font: inherit;
     }
-    a.btn:hover {
-      transform:translateY(-2px);
-      box-shadow:0 6px 18px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.02) inset;
-      background:rgba(255,255,255,0.08);
+
+    .site-shell {
+      position: relative;
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
     }
-    p.small { margin:14px 0 0; color:rgba(255,255,255,0.65); font-size:13px; }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      z-index: 20;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 800;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .nav {
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(6, 8, 18, 0.72);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: max-content;
+      padding-left: 4px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(34, 211, 238, 0.88)),
+        #141a31;
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.32);
+      color: white;
+      font-size: 0.78rem;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      color: var(--muted-strong);
+      font-size: 0.92rem;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255, 255, 255, 0.09);
+      color: var(--text);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      align-items: center;
+      gap: clamp(28px, 5vw, 68px);
+      min-height: calc(100svh - 92px);
+      padding: clamp(56px, 8vw, 112px) 0 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: max-content;
+      max-width: 100%;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--muted-strong);
+      font-size: 0.88rem;
+      font-weight: 750;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.12);
+    }
+
+    .hero h1 {
+      margin: 18px 0 0;
+      max-width: 900px;
+      font-size: clamp(3.2rem, 8vw, 6.85rem);
+      line-height: 0.9;
+      letter-spacing: -0.085em;
+    }
+
+    .hero h1 span {
+      display: block;
+      background: linear-gradient(120deg, #ffffff 0%, #cbd5ff 38%, #67e8f9 76%, #fde68a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--muted-strong);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 13px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font-weight: 850;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button.primary {
+      border-color: rgba(139, 92, 246, 0.55);
+      background: linear-gradient(135deg, #8b5cf6, #2563eb 52%, #0891b2);
+      box-shadow: 0 18px 42px rgba(37, 99, 235, 0.3);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.12);
+      outline: none;
+    }
+
+    .button.primary:hover,
+    .button.primary:focus-visible {
+      box-shadow: 0 22px 58px rgba(37, 99, 235, 0.42);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 680px;
+    }
+
+    .stat {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      letter-spacing: -0.05em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 540px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045)),
+        rgba(255, 255, 255, 0.05);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-panel::before,
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(4px);
+      opacity: 0.75;
+    }
+
+    .hero-panel::before {
+      width: 260px;
+      height: 260px;
+      right: -74px;
+      top: -64px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.36), transparent 65%);
+    }
+
+    .hero-panel::after {
+      width: 280px;
+      height: 280px;
+      left: -92px;
+      bottom: -80px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.42), transparent 65%);
+    }
+
+    .logo-orbit {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .orbit-logo {
+      position: absolute;
+      width: clamp(64px, 7.4vw, 96px);
+      aspect-ratio: 1;
+      padding: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      background: rgba(5, 7, 15, 0.42);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(14px);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .orbit-logo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    .orbit-logo:nth-child(1) { top: 9%; left: 11%; animation-delay: -0.5s; }
+    .orbit-logo:nth-child(2) { top: 6%; right: 16%; animation-delay: -2s; }
+    .orbit-logo:nth-child(3) { top: 33%; right: 5%; animation-delay: -4s; }
+    .orbit-logo:nth-child(4) { bottom: 9%; right: 18%; animation-delay: -1s; }
+    .orbit-logo:nth-child(5) { bottom: 13%; left: 13%; animation-delay: -3.2s; }
+    .orbit-logo:nth-child(6) { top: 38%; left: 4%; animation-delay: -5.2s; }
+
+    .spotlight-card {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      z-index: 2;
+      width: min(78%, 360px);
+      transform: translate(-50%, -50%);
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 28px;
+      background: rgba(8, 12, 28, 0.82);
+      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.48);
+      backdrop-filter: blur(22px);
+    }
+
+    .spotlight-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .spotlight-top img {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      object-fit: cover;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.34);
+    }
+
+    .spotlight-card h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      letter-spacing: -0.04em;
+    }
+
+    .spotlight-card p {
+      margin: 12px 0 0;
+      color: var(--muted-strong);
+      line-height: 1.55;
+    }
+
+    .mini-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--muted-strong);
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      50% { transform: translate3d(0, -14px, 0) rotate(2deg); }
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: var(--secondary);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+    }
+
+    .section-copy {
+      max-width: 460px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 16px;
+    }
+
+    .feature-card {
+      position: relative;
+      min-height: 330px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.26);
+      isolation: isolate;
+      transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+    }
+
+    .feature-card:hover,
+    .feature-card:focus-visible {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.09);
+      outline: none;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 20% 12%, var(--glow, rgba(139, 92, 246, 0.4)), transparent 42%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.35));
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -45% -20%;
+      z-index: -1;
+      height: 68%;
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+    }
+
+    .feature-art {
+      position: absolute;
+      top: 26px;
+      right: 24px;
+      width: min(42%, 168px);
+      aspect-ratio: 1;
+      border-radius: 34px;
+      object-fit: cover;
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.42);
+      transform: rotate(4deg);
+    }
+
+    .feature-card:first-child .feature-art {
+      width: min(48%, 210px);
+    }
+
+    .feature-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card h3 {
+      margin: 12px 0 8px;
+      max-width: 420px;
+      font-size: clamp(1.35rem, 2.6vw, 2.2rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .feature-card p {
+      max-width: 430px;
+      margin: 0;
+      color: var(--muted-strong);
+      line-height: 1.58;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      margin: 26px 0 22px;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .search-box input {
+      width: 100%;
+      height: 54px;
+      padding: 0 16px 0 48px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      outline: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .search-box input:focus {
+      border-color: rgba(34, 211, 238, 0.55);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.1);
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .filter-button {
+      min-height: 42px;
+      padding: 10px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--muted-strong);
+      cursor: pointer;
+      font-weight: 850;
+      font-size: 0.88rem;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .filter-button:hover,
+    .filter-button:focus-visible,
+    .filter-button.active {
+      transform: translateY(-1px);
+      border-color: rgba(34, 211, 238, 0.42);
+      background: rgba(34, 211, 238, 0.14);
+      color: var(--text);
+      outline: none;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .game-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.1), transparent 32%),
+        rgba(255, 255, 255, 0.066);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .game-card:hover,
+    .game-card:focus-within {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.28);
+      background-color: rgba(255, 255, 255, 0.095);
+    }
+
+    .game-head {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+    }
+
+    .game-logo,
+    .game-fallback {
+      flex: 0 0 auto;
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    .game-logo {
+      object-fit: cover;
+    }
+
+    .game-fallback {
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.85), rgba(34, 211, 238, 0.75));
+      font-size: 1.7rem;
+    }
+
+    .game-card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+    }
+
+    .game-card p {
+      margin: 13px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.93rem;
+    }
+
+    .game-tags {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .game-tags .tag {
+      padding: 6px 8px;
+      font-size: 0.7rem;
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.075);
+      color: var(--muted-strong);
+      font-size: 0.82rem;
+      font-weight: 850;
+      transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .card-link.main {
+      background: rgba(139, 92, 246, 0.18);
+      border-color: rgba(139, 92, 246, 0.28);
+      color: var(--text);
+    }
+
+    .card-link:hover,
+    .card-link:focus-visible {
+      border-color: rgba(34, 211, 238, 0.45);
+      background: rgba(34, 211, 238, 0.13);
+      color: var(--text);
+      outline: none;
+    }
+
+
+
+    .store-cta {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 14px;
+      padding: 8px 11px;
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      border-radius: 999px;
+      background: rgba(52, 211, 153, 0.13);
+      color: #d7fff0;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .spotlight-store {
+      margin-top: 18px;
+      width: fit-content;
+    }
+
+    .no-results {
+      display: none;
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-md);
+      color: var(--muted-strong);
+      text-align: center;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .studio-card,
+    .principle-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.064);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.22);
+    }
+
+    .studio-card {
+      padding: clamp(22px, 4vw, 34px);
+    }
+
+    .studio-card h2 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 3.1rem);
+      line-height: 1;
+      letter-spacing: -0.065em;
+    }
+
+    .studio-card p {
+      margin: 18px 0 0;
+      color: var(--muted-strong);
+      line-height: 1.7;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .principle-card {
+      padding: 22px;
+    }
+
+    .principle-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 1.28rem;
+    }
+
+    .principle-card h3 {
+      margin: 0;
+      font-size: 1.06rem;
+      letter-spacing: -0.03em;
+    }
+
+    .principle-card p {
+      margin: 9px 0 0;
+      color: var(--muted);
+      line-height: 1.58;
+      font-size: 0.93rem;
+    }
+
+    .footer {
+      padding: 34px 0 56px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted-strong);
+      font-weight: 750;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--text);
+      outline: none;
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 1040px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-panel {
+        min-height: 500px;
+      }
+
+      .featured-grid,
+      .studio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .games-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 780px) {
+      .site-shell { width: min(100% - 24px, var(--max)); }
+
+      .nav {
+        align-items: flex-start;
+        border-radius: 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 15vw, 4.6rem);
+      }
+
+      .hero-stats,
+      .toolbar,
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+        justify-content: flex-start;
+      }
+
+      .games-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-panel {
+        min-height: 430px;
+      }
+
+      .spotlight-card {
+        width: calc(100% - 32px);
+      }
+
+      .orbit-logo {
+        width: 64px;
+        border-radius: 20px;
+      }
+
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .game-card {
+        padding: 15px;
+      }
+
+      .featured-grid {
+        gap: 12px;
+      }
+
+      .feature-card {
+        min-height: 290px;
+      }
+
+      .feature-art {
+        width: 122px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
   </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aeolian codelab",
+    "url": "https://tocarepo.github.io/",
+    "description": "Indie mobile games and experimental apps by Aeolian codelab.",
+    "sameAs": ["https://tocarepo.github.io/"]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Aeolian codelab games",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "You Are Zombies",
+      "url": "https://play.google.com/store/apps/details?id=com.youarethezombies.reverse.towerdefense"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Break The Forest",
+      "url": "https://play.google.com/store/apps/details?id=com.breaktheforest.cardroguelike"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hexconomy",
+      "url": "https://play.google.com/store/apps/details?id=com.hexconomy.cardstrategyboardgame"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "ObjectRogue",
+      "url": "https://play.google.com/store/apps/details?id=com.objectrogue.play.as.anything"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Monster Admin: Idle Clicker",
+      "url": "https://play.google.com/store/apps/details?id=monster.admin.idle.clicker"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Tiny Order: Idle Clicker",
+      "url": "https://play.google.com/store/apps/details?id=com.tinyorder.idle.cult.clicker"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "The Stone: Zombie Idle Clicker",
+      "url": "https://play.google.com/store/apps/details?id=com.thestone.zombieidleclicker"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "Midnight Mug Cafe - Idle Co.",
+      "url": "https://play.google.com/store/apps/details?id=com.midnightmug.cafe.idle.cliker"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "Illuminati Conspiracy Idle Clicker",
+      "url": "https://play.google.com/store/apps/details?id=com.nwo.order.world.illuminaticonspiracy"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "Sorty - Liquid Puzzle Game",
+      "url": "https://play.google.com/store/apps/details?id=com.sorty.liquid.puzzle.sort"
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "name": "Trend Swipe",
+      "url": "https://play.google.com/store/apps/details?id=com.trend.swipe.color.matching.game"
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "name": "72 Days",
+      "url": "https://play.google.com/store/apps/details?id=com.seventytwo.days.illuminaty.conspiracy"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "name": "Bingo",
+      "url": "https://play.google.com/store/apps/details?id=com.estrazione.bingo.christmas.natale.tombola.bingo"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "name": "Ghigliottina",
+      "url": "https://play.google.com/store/apps/details?id=com.calendapp.ghigliottina.eredita"
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "name": "Indovinelli",
+      "url": "https://play.google.com/store/apps/details?id=com.parole.indovinelli"
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "name": "Barzellette Tristi e Freddure",
+      "url": "https://play.google.com/store/apps/details?id=it.parole.freddure.barzellette"
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "name": "Squeaky Toys",
+      "url": "https://play.google.com/store/apps/details?id=com.dogapp.squeakytoy"
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "name": "Zombie Base: Tower Defense TD",
+      "url": "https://play.google.com/store/apps/details?id=com.zombie.base.tower.defence.idle.offline"
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "name": "Duck The Brave Duck",
+      "url": "https://play.google.com/store/apps/details?id=com.duck.the.brave.duck.platformer.run"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Aeolian codelab</h1>
+<a class="skip-link" href="#games">Skip to games</a>
+<header aria-label="Primary navigation" class="site-shell nav">
+<a aria-label="Aeolian codelab home" class="brand" href="#top">
+<span aria-hidden="true" class="brand-mark">AC</span>
+<span>Aeolian codelab</span>
+</a>
+<nav aria-label="Page sections" class="nav-links">
+<a href="#featured">Featured</a>
+<a href="#games">Games</a>
+<a href="#studio">Studio</a>
+</nav>
+</header>
+<main id="top">
+<section aria-labelledby="hero-title" class="site-shell hero">
+<div>
+<div class="eyebrow"><span aria-hidden="true" class="pulse"></span> Indie mobile games, odd ideas, tiny worlds</div>
+<h1 id="hero-title">Aeolian <span>codelab</span></h1>
+<p class="hero-copy">A complete Play Store launchpad for every Aeolian codelab game and app: roguelike deck builders, idle clickers, puzzle games, reverse tower defense, trivia, party games, and playful experiments.</p>
+<div aria-label="Landing page actions" class="hero-actions">
+<a class="button primary" href="#games">Browse all games <span aria-hidden="true">↓</span></a>
+<a class="button" href="#featured">See featured picks <span aria-hidden="true">✦</span></a>
+</div>
+<div aria-label="Studio catalogue stats" class="hero-stats">
+<div class="stat"><strong>19</strong><span>game &amp; app pages</span></div>
+<div class="stat"><strong>7</strong><span>play styles</span></div>
+<div class="stat"><strong>100%</strong><span>mobile-first spirit</span></div>
+</div>
+</div>
+<aside aria-label="Aeolian codelab game artwork collage" class="hero-panel">
+<div aria-hidden="true" class="logo-orbit">
+<div class="orbit-logo"><img alt="" loading="eager" src="you-are-the-zombies/logo.png"/></div>
+<div class="orbit-logo"><img alt="" loading="eager" src="assets/zombie-base-logo.png"/></div>
+<div class="orbit-logo"><img alt="" loading="eager" src="hexconomy/logo.png"/></div>
+<div class="orbit-logo"><img alt="" loading="lazy" src="tiny-order-idle-clicker/logo.png"/></div>
+<div class="orbit-logo"><img alt="" loading="lazy" src="sorty-site/logo.png"/></div>
+<div class="orbit-logo"><img alt="" loading="lazy" src="assets/duck-the-brave-duck-logo.png"/></div>
+</div>
+<div class="spotlight-card">
+<div class="spotlight-top">
+<img alt="You Are The Zombies app icon" loading="eager" src="you-are-the-zombies/logo.png"/>
+<div>
+<span class="tag">Featured</span>
+<h2>You Are The Zombies</h2>
+</div>
+</div>
+<p>Reverse tower defense energy: lead the horde, flip the formula, and explore one of the studio's most distinctive game ideas.</p>
+<div aria-label="Featured game tags" class="mini-tags">
+<span class="tag">Strategy</span>
+<span class="tag">Tower defense</span>
+<span class="tag">Undead</span>
+</div>
+<a class="spotlight-store card-link main" href="https://play.google.com/store/apps/details?id=com.youarethezombies.reverse.towerdefense" rel="noopener noreferrer" target="_blank">Available on Play Store</a></div>
+</aside>
+</section>
+<section aria-labelledby="featured-title" class="site-shell" id="featured">
+<div class="section-header">
+<div>
+<p class="section-kicker">Featured worlds</p>
+<h2 class="section-title" id="featured-title">Start with the games that show the range.</h2>
+</div>
+<p class="section-copy">These three picks lead the catalogue on Google Play: the undead twist of You Are Zombies, the base-building pressure of Zombie Base, and the cozy idle magic of Tiny Order.</p>
+</div>
+<div class="featured-grid">
+<a aria-label="Available on Play Store: You Are Zombies" class="feature-card" href="https://play.google.com/store/apps/details?id=com.youarethezombies.reverse.towerdefense" rel="noopener noreferrer" style="--glow: rgba(34, 211, 238, 0.46);" target="_blank">
+<img alt="You Are Zombies logo" class="feature-art" loading="lazy" src="you-are-the-zombies/logo.png"/>
+<div class="feature-content">
+<span class="tag">Reverse Tower Defense</span>
+<h3>You Are Zombies</h3>
+<p>Play the other side of the apocalypse and push the horde forward.</p>
+<span class="store-cta">Available on Play Store →</span></div>
+</a>
+<a aria-label="Available on Play Store: Zombie Base" class="feature-card" href="https://play.google.com/store/apps/details?id=com.zombie.base.tower.defence.idle.offline" rel="noopener noreferrer" style="--glow: rgba(251, 113, 133, 0.42);" target="_blank">
+<img alt="Zombie Base logo" class="feature-art" loading="lazy" src="assets/zombie-base-logo.png"/>
+<div class="feature-content">
+<span class="tag">Tower Defense TD</span>
+<h3>Zombie Base</h3>
+<p>Build the base, hold the line, and survive wave after wave.</p>
+<span class="store-cta">Available on Play Store →</span></div>
+</a>
+<a aria-label="Available on Play Store: Tiny Order" class="feature-card" href="https://play.google.com/store/apps/details?id=com.tinyorder.idle.cult.clicker" rel="noopener noreferrer" style="--glow: rgba(168, 85, 247, 0.42);" target="_blank">
+<img alt="Tiny Order logo" class="feature-art" loading="lazy" src="tiny-order-idle-clicker/logo.png"/>
+<div class="feature-content">
+<span class="tag">Idle Clicker</span>
+<h3>Tiny Order</h3>
+<p>A magical idle world of tiny rituals, upgrades, and cozy progression.</p>
+<span class="store-cta">Available on Play Store →</span></div>
+</a>
+</div>
+</section>
+<section aria-labelledby="games-title" class="site-shell" id="games">
+<div class="section-header">
+<div>
+<p class="section-kicker">Complete catalogue</p>
+<h2 class="section-title" id="games-title">Every Aeolian codelab game in one place.</h2>
+</div>
+<p class="section-copy">Search by title, filter by play style, then jump directly to each game on Google Play. Privacy and terms pages remain one tap away.</p>
+</div>
+<div aria-label="Game search and filters" class="toolbar" role="region">
+<label class="search-box">
+<span class="sr-only">Search games</span>
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24"><path d="m21 21-4.35-4.35m1.35-5.15a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+<input autocomplete="off" id="gameSearch" placeholder="Search games, genres, themes..." type="search"/>
+</label>
+<div aria-label="Filter games by category" class="filters">
+<button class="filter-button active" data-filter="all" type="button">All</button>
+<button class="filter-button" data-filter="idle" type="button">Idle</button>
+<button class="filter-button" data-filter="puzzle" type="button">Puzzle</button>
+<button class="filter-button" data-filter="strategy" type="button">Strategy</button>
+<button class="filter-button" data-filter="roguelike" type="button">Roguelike</button>
+<button class="filter-button" data-filter="party" type="button">Party &amp; Trivia</button>
+<button class="filter-button" data-filter="app" type="button">Apps</button>
+</div>
+</div>
+<div class="games-grid" id="gamesGrid">
+<article class="game-card" data-category="strategy tower-defense" data-search="you are the zombies reverse tower defense strategy undead apocalypse">
+<div class="game-head">
+<img alt="You Are The Zombies logo" class="game-logo" loading="lazy" src="you-are-the-zombies/logo.png"/>
+<h3>You Are The Zombies</h3>
+</div>
+<p>Reverse tower defense where the horde is yours to command.</p>
+<div class="game-tags"><span class="tag">Strategy</span><span class="tag">Tower defense</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: You Are The Zombies" class="card-link main" href="https://play.google.com/store/apps/details?id=com.youarethezombies.reverse.towerdefense" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="you-are-the-zombies/documents/privacy.html">Privacy</a><a class="card-link" href="you-are-the-zombies/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="roguelike strategy cards" data-search="break the forest roguelike deck builder card game forest tactical">
+<div class="game-head">
+<img alt="Break The Forest logo" class="game-logo" loading="lazy" src="break-the-forest-roguelike/logo.png"/>
+<h3>Break The Forest</h3>
+</div>
+<p>A roguelike deck builder built around tense runs and tactical choices.</p>
+<div class="game-tags"><span class="tag">Roguelike</span><span class="tag">Cards</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Break The Forest" class="card-link main" href="https://play.google.com/store/apps/details?id=com.breaktheforest.cardroguelike" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="break-the-forest-roguelike/documents/privacy.html">Privacy</a><a class="card-link" href="break-the-forest-roguelike/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="strategy" data-search="hexconomy economic empire hexagons strategy city builder economy">
+<div class="game-head">
+<img alt="Hexconomy logo" class="game-logo" loading="lazy" src="hexconomy/logo.png"/>
+<h3>Hexconomy</h3>
+</div>
+<p>Build your economic empire on hexagons.</p>
+<div class="game-tags"><span class="tag">Strategy</span><span class="tag">Economy</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Hexconomy" class="card-link main" href="https://play.google.com/store/apps/details?id=com.hexconomy.cardstrategyboardgame" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="hexconomy/documents/privacy.html">Privacy</a><a class="card-link" href="hexconomy/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="roguelike strategy" data-search="objectrogue object rogue play as anything roguelike experimental">
+<div class="game-head">
+<img alt="ObjectRogue logo" class="game-logo" loading="lazy" src="objectrogue/logo.png"/>
+<h3>ObjectRogue</h3>
+</div>
+<p>Play as anything in a strange, experimental roguelike world.</p>
+<div class="game-tags"><span class="tag">Roguelike</span><span class="tag">Experimental</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: ObjectRogue" class="card-link main" href="https://play.google.com/store/apps/details?id=com.objectrogue.play.as.anything" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="objectrogue/documents/privacy.html">Privacy</a><a class="card-link" href="objectrogue/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="idle strategy" data-search="monster admin idle clicker manage monsters fight heroes fantasy goblin admin">
+<div class="game-head">
+<img alt="Monster Admin: Idle Clicker logo" class="game-logo" loading="lazy" src="monster-admin/logo.png"/>
+<h3>Monster Admin: Idle Clicker</h3>
+</div>
+<p>Manage your monsters, optimize the lair, and fight heroes.</p>
+<div class="game-tags"><span class="tag">Idle</span><span class="tag">Monsters</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Monster Admin: Idle Clicker" class="card-link main" href="https://play.google.com/store/apps/details?id=monster.admin.idle.clicker" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="monster-admin/documents/privacy.html">Privacy</a><a class="card-link" href="monster-admin/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="idle" data-search="tiny order idle clicker cult grow magic occult">
+<div class="game-head">
+<img alt="Tiny Order: Idle Clicker logo" class="game-logo" loading="lazy" src="tiny-order-idle-clicker/logo.png"/>
+<h3>Tiny Order: Idle Clicker</h3>
+</div>
+<p>Manage your tiny cult, grow the order, and unlock eerie upgrades.</p>
+<div class="game-tags"><span class="tag">Idle</span><span class="tag">Occult</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Tiny Order: Idle Clicker" class="card-link main" href="https://play.google.com/store/apps/details?id=com.tinyorder.idle.cult.clicker" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="tiny-order-idle-clicker/documents/privacy.html">Privacy</a><a class="card-link" href="tiny-order-idle-clicker/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="idle" data-search="the stone zombie idle clicker undead upgrades click your way to the top">
+<div class="game-head">
+<img alt="The Stone: Zombie Idle Clicker logo" class="game-logo" loading="lazy" src="the-stone-zombie-idle-clicker/logo.png"/>
+<h3>The Stone: Zombie Idle Clicker</h3>
+</div>
+<p>Click your way through a zombie-themed idle progression loop.</p>
+<div class="game-tags"><span class="tag">Idle</span><span class="tag">Zombies</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: The Stone: Zombie Idle Clicker" class="card-link main" href="https://play.google.com/store/apps/details?id=com.thestone.zombieidleclicker" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="the-stone-zombie-idle-clicker/documents/privacy.html">Privacy</a><a class="card-link" href="the-stone-zombie-idle-clicker/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="idle" data-search="midnight mug cafe idle clicker cryptids cafe cozy monsters coffee idle co coffee cafe clicker cliker">
+<div class="game-head">
+<img alt="Midnight Mug Cafe: Idle Clicker logo" class="game-logo" loading="lazy" src="midnight-mug-cafe-idle-clicker/logo.png"/>
+<h3>Midnight Mug Cafe - Idle Co.</h3>
+</div>
+<p>A cozy idle cafe experience built around mugs, upgrades, and satisfying progress.</p>
+<div class="game-tags"><span class="tag">Idle</span><span class="tag">Cafe</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Midnight Mug Cafe - Idle Co." class="card-link main" href="https://play.google.com/store/apps/details?id=com.midnightmug.cafe.idle.cliker" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="midnight-mug-cafe-idle-clicker/documents/privacy.html">Privacy</a><a class="card-link" href="midnight-mug-cafe-idle-clicker/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="idle" data-search="illuminati conspiracy idle clicker secret society click your way to the top">
+<div class="game-head">
+<img alt="Illuminati Conspiracy Idle Clicker logo" class="game-logo" loading="lazy" src="illuminati-conspiracy-idle-clicker/logo.png"/>
+<h3>Illuminati Conspiracy Idle Clicker</h3>
+</div>
+<p>Rise through a neon secret society one tap at a time.</p>
+<div class="game-tags"><span class="tag">Idle</span><span class="tag">Conspiracy</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Illuminati Conspiracy Idle Clicker" class="card-link main" href="https://play.google.com/store/apps/details?id=com.nwo.order.world.illuminaticonspiracy" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="illuminati-conspiracy-idle-clicker/documents/privacy.html">Privacy</a><a class="card-link" href="illuminati-conspiracy-idle-clicker/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="puzzle" data-search="sorty liquid puzzle game sorting colors bottles puzzle">
+<div class="game-head">
+<img alt="Sorty - Liquid Puzzle Game logo" class="game-logo" loading="lazy" src="sorty-site/logo.png"/>
+<h3>Sorty - Liquid Puzzle Game</h3>
+</div>
+<p>A clean liquid sorting puzzle for quick, satisfying sessions.</p>
+<div class="game-tags"><span class="tag">Puzzle</span><span class="tag">Sorting</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Sorty - Liquid Puzzle Game" class="card-link main" href="https://play.google.com/store/apps/details?id=com.sorty.liquid.puzzle.sort" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="sorty-site/documents/privacy.html">Privacy</a><a class="card-link" href="sorty-site/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="puzzle" data-search="trend swipe matching game swipe puzzle casual">
+<div class="game-head">
+<img alt="Trend Swipe logo" class="game-logo" loading="lazy" src="trend-swipe/logo.png"/>
+<h3>Trend Swipe</h3>
+</div>
+<p>A cheerful matching game built for fast swipes and quick decisions.</p>
+<div class="game-tags"><span class="tag">Puzzle</span><span class="tag">Matching</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Trend Swipe" class="card-link main" href="https://play.google.com/store/apps/details?id=com.trend.swipe.color.matching.game" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="trend-swipe/documents/privacy.html">Privacy</a><a class="card-link" href="trend-swipe/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="strategy" data-search="72 days world control strategy conquest">
+<div class="game-head">
+<img alt="72 Days logo" class="game-logo" loading="lazy" src="72-days/logo.png"/>
+<h3>72 Days</h3>
+</div>
+<p>A compact world-control concept with a bold icon and sharp premise.</p>
+<div class="game-tags"><span class="tag">Strategy</span><span class="tag">World control</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: 72 Days" class="card-link main" href="https://play.google.com/store/apps/details?id=com.seventytwo.days.illuminaty.conspiracy" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="72-days/documents/privacy.html">Privacy</a><a class="card-link" href="72-days/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="party" data-search="bingo party game classic number 90">
+<div class="game-head">
+<img alt="Bingo logo" class="game-logo" loading="lazy" src="bingo/logo.png"/>
+<h3>Bingo</h3>
+</div>
+<p>A simple, familiar party-game page for Bingo players.</p>
+<div class="game-tags"><span class="tag">Party</span><span class="tag">Classic</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Bingo" class="card-link main" href="https://play.google.com/store/apps/details?id=com.estrazione.bingo.christmas.natale.tombola.bingo" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="bingo/documents/privacy.html">Privacy</a><a class="card-link" href="bingo/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="party trivia" data-search="ghigliottina word quiz italian game party trivia">
+<div class="game-head">
+<img alt="Ghigliottina logo" class="game-logo" loading="lazy" src="ghigliottina/logo.png"/>
+<h3>Ghigliottina</h3>
+</div>
+<p>A word-game landing page inspired by Italian quiz-show fun.</p>
+<div class="game-tags"><span class="tag">Trivia</span><span class="tag">Words</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Ghigliottina" class="card-link main" href="https://play.google.com/store/apps/details?id=com.calendapp.ghigliottina.eredita" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="ghigliottina/documents/privacy.html">Privacy</a><a class="card-link" href="ghigliottina/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="party trivia app" data-search="indovinelli android riddles italian trivia quiz app">
+<div class="game-head">
+<img alt="Indovinelli logo" class="game-logo" loading="lazy" src="indovinelli-android/logo.png"/>
+<h3>Indovinelli</h3>
+</div>
+<p>Italian riddles for Android, made for quick laughs and clever answers.</p>
+<div class="game-tags"><span class="tag">Trivia</span><span class="tag">Android</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Indovinelli" class="card-link main" href="https://play.google.com/store/apps/details?id=com.parole.indovinelli" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="indovinelli-android/documents/privacy.html">Privacy</a><a class="card-link" href="indovinelli-android/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="app party" data-search="barzellette tristi freddure android jokes italian humor app">
+<div class="game-head">
+<img alt="Barzellette Tristi e Freddure logo" class="game-logo" loading="lazy" src="barzellette-tristi-e-freddure-android/logo.png"/>
+<h3>Barzellette Tristi e Freddure</h3>
+</div>
+<p>Italian sad jokes and freddure for Android.</p>
+<div class="game-tags"><span class="tag">Humor</span><span class="tag">Android</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Barzellette Tristi e Freddure" class="card-link main" href="https://play.google.com/store/apps/details?id=it.parole.freddure.barzellette" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="barzellette-tristi-e-freddure-android/documents/privacy.html">Privacy</a><a class="card-link" href="barzellette-tristi-e-freddure-android/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="app" data-search="squeaky toys dog app friendly pets toys">
+<div class="game-head">
+<img alt="Squeaky Toys logo" class="game-logo" loading="lazy" src="squeaky-toys/logo.png"/>
+<h3>Squeaky Toys</h3>
+</div>
+<p>A dog-friendly playful app page with a soft, pet-first personality.</p>
+<div class="game-tags"><span class="tag">App</span><span class="tag">Pets</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Squeaky Toys" class="card-link main" href="https://play.google.com/store/apps/details?id=com.dogapp.squeakytoy" rel="noopener noreferrer" target="_blank">Available on Play Store</a><a class="card-link" href="squeaky-toys/documents/privacy.html">Privacy</a><a class="card-link" href="squeaky-toys/documents/termsandcondition.html">Terms</a></div>
+</article>
+<article class="game-card" data-category="strategy tower-defense" data-search="zombie base tower defense td strategy undead base defense featured">
+<div class="game-head">
+<img alt="Zombie Base logo" class="game-logo" loading="lazy" src="assets/zombie-base-logo.png"/>
+<h3>Zombie Base: Tower Defense TD</h3>
+</div>
+<p>External landing page for a zombie-themed tower defense game.</p>
+<div class="game-tags"><span class="tag">Tower defense</span><span class="tag">Featured</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Zombie Base: Tower Defense TD" class="card-link main" href="https://play.google.com/store/apps/details?id=com.zombie.base.tower.defence.idle.offline" rel="noopener noreferrer" target="_blank">Available on Play Store</a></div>
+</article>
+<article class="game-card" data-category="app puzzle" data-search="duck the brave duck game external adventure casual">
+<div class="game-head">
+<img alt="Duck: The Brave Duck logo" class="game-logo" loading="lazy" src="assets/duck-the-brave-duck-logo.png"/>
+<h3>Duck The Brave Duck</h3>
+</div>
+<p>A cute endless runner adventure with jumps, obstacles, stars, and brave little ducks.</p>
+<div class="game-tags"><span class="tag">Adventure</span><span class="tag">External</span></div>
+<div class="card-actions"><a aria-label="Available on Play Store: Duck The Brave Duck" class="card-link main" href="https://play.google.com/store/apps/details?id=com.duck.the.brave.duck.platformer.run" rel="noopener noreferrer" target="_blank">Available on Play Store</a></div>
+</article>
+</div>
+<p class="no-results" id="noResults">No games match that search yet. Try another title, genre, or theme.</p>
+</section>
+<section aria-labelledby="studio-title" class="site-shell" id="studio">
+<div class="studio-grid">
+<div class="studio-card">
+<p class="section-kicker">Studio DNA</p>
+<h2 id="studio-title">Small games with loud ideas.</h2>
+<p>Aeolian codelab is a catalogue of fast prototypes, quirky mechanics, approachable mobile pages, and memorable icons. This hub gives every project a cleaner home while keeping the route to policies and app pages simple.</p>
+</div>
+<div class="principles">
+<div class="principle-card">
+<div aria-hidden="true" class="principle-icon">⚡</div>
+<h3>Instantly readable</h3>
+<p>Clear cards, quick tags, direct links, and a searchable catalogue make every game easy to find.</p>
+</div>
+<div class="principle-card">
+<div aria-hidden="true" class="principle-icon">🎮</div>
+<h3>Genre variety</h3>
+<p>Idle progression, roguelike runs, puzzles, strategy, trivia, and playful apps all live together.</p>
+</div>
+<div class="principle-card">
+<div aria-hidden="true" class="principle-icon">📱</div>
+<h3>Mobile friendly</h3>
+<p>The layout is responsive, touch-friendly, and built to look polished from phone to desktop.</p>
+</div>
+<div class="principle-card">
+<div aria-hidden="true" class="principle-icon">🔎</div>
+<h3>SEO ready</h3>
+<p>Semantic HTML, metadata, structured data, accessible text, and descriptive content help the site present well.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-shell footer">
+<div class="footer-inner">
+<p>© <span id="year"></span> Aeolian codelab. All games, apps, and pages in one hub.</p>
+<div aria-label="Footer links" class="footer-links">
+<a href="#top">Back to top</a>
+<a href="#games">All games</a>
+<a href="https://tocarepo.github.io/" rel="noopener noreferrer" target="_blank">GitHub Pages</a>
+</div>
+</div>
+</footer>
+<style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+<script>
+    const searchInput = document.querySelector('#gameSearch');
+    const cards = Array.from(document.querySelectorAll('.game-card'));
+    const filterButtons = Array.from(document.querySelectorAll('.filter-button'));
+    const noResults = document.querySelector('#noResults');
+    const year = document.querySelector('#year');
+    let activeFilter = 'all';
 
-    <div class="links">
-      <a class="btn" href="https://tocarepo.github.io/ZombieSiegeHomePage/" target="_blank" rel="noopener noreferrer">Zombie Base: Tower Defense TD</a>
-      <a class="btn" href="https://tocarepo.github.io/website-duck-the-brave-duck/" target="_blank" rel="noopener noreferrer">Duck: The Brave Duck</a>
-      <a class="btn" href="https://tocarepo.github.io/72-days/" target="_blank" rel="noopener noreferrer">72 Days</a>
-      <a class="btn" href="https://tocarepo.github.io/barzellette-tristi-e-freddure-android/" target="_blank" rel="noopener noreferrer">Barzelette Tristi e freddure</a>
-      <a class="btn" href="https://tocarepo.github.io/bingo/" target="_blank" rel="noopener noreferrer">Bingo</a>
-      <a class="btn" href="https://tocarepo.github.io/break-the-forest-roguelike/" target="_blank" rel="noopener noreferrer">Break The Forest</a>
-      <a class="btn" href="https://tocarepo.github.io/ghigliottina/" target="_blank" rel="noopener noreferrer">Ghigliottina</a>
-      <a class="btn" href="https://tocarepo.github.io/hexconomy/" target="_blank" rel="noopener noreferrer">Hexconomy</a>
-      <a class="btn" href="https://tocarepo.github.io/indovinelli-android/" target="_blank" rel="noopener noreferrer">Indovinelli</a>
-      <a class="btn" href="https://tocarepo.github.io/sorty-site/" target="_blank" rel="noopener noreferrer">Sorty - Liquid Puzzle Game</a>
-      <a class="btn" href="https://tocarepo.github.io/squeaky-toys/" target="_blank" rel="noopener noreferrer">Squeaky Toys</a>
-      <a class="btn" href="https://tocarepo.github.io/trend-swipe/" target="_blank" rel="noopener noreferrer">Trend Swipe</a>
-      <a class="btn" href="https://tocarepo.github.io/you-are-the-zombies/" target="_blank" rel="noopener noreferrer">You Are The Zombies</a>
-    </div>
+    year.textContent = new Date().getFullYear();
 
-  </div>
+    function normalize(value) {
+      return value.toLowerCase().trim();
+    }
+
+    function applyFilters() {
+      const query = normalize(searchInput.value);
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const categories = normalize(card.dataset.category || '');
+        const searchable = normalize(`${card.textContent} ${card.dataset.search || ''}`);
+        const matchesFilter = activeFilter === 'all' || categories.includes(activeFilter);
+        const matchesSearch = !query || searchable.includes(query);
+        const isVisible = matchesFilter && matchesSearch;
+
+        card.classList.toggle('hidden', !isVisible);
+        if (isVisible) visibleCount += 1;
+      });
+
+      noResults.style.display = visibleCount ? 'none' : 'block';
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.filter;
+        filterButtons.forEach((item) => {
+          const isActive = item === button;
+          item.classList.toggle('active', isActive);
+          item.setAttribute('aria-pressed', String(isActive));
+        });
+        applyFilters();
+      });
+      button.setAttribute('aria-pressed', button.classList.contains('active') ? 'true' : 'false');
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+  </script>
 </body>
 </html>
